@@ -80,7 +80,7 @@
 			L.geoJson(data,{
 			  pointToLayer: function(feature,latlng){
 				var marker = L.marker(latlng,{icon: archivoIcon});
-				marker.bindPopup(feature.properties.descripcion);
+				marker.bindPopup(feature.properties.nombre);
 				return marker;
 			  }
 			}).addTo(archivo);
@@ -116,8 +116,8 @@
 		};
 
 		var overlays = {
-			"Archivos": archivo, 
-			"Bibliotecas": biblioteca
+			"Archivos": archivo
+			//"Bibliotecas": biblioteca
 		};
 		
 		var searchControl = new L.Control.Search({
