@@ -77,7 +77,7 @@
 			L.geoJson(data,{
 			  pointToLayer: function(feature,latlng){
 				var marker = L.marker(latlng,{icon: archivoIcon});
-				marker.bindPopup(feature.properties.descripcion);
+				marker.bindPopup(feature.properties.nombre);
 				return marker;
 			  }
 			}).addTo(archivo);
