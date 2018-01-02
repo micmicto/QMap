@@ -1,0 +1,16 @@
+var searchControl = new L.Control.Search({
+			layer: archivo, 
+			propertyName: 'nombre',
+			circleLocation: false
+		});
+ 
+		searchControl.on('search_locationfound', function(e) {
+			e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+		})
+		.on('search_collapsed', function(e) {
+			archivo.eachLayer(function(layer) { //restauramos el color del elemento
+				archivo.resetStyle(layer);
+			});	
+		});
+		
+		map.addControl(searchControl);
