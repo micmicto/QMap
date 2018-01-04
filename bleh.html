@@ -110,7 +110,7 @@
 		};
     
 		var searchControl = new L.Control.Search({
-			layer: overlays,
+			layer: archivo,
 			propertyName: 'nombre',
 			circleLocation: false
 		});
@@ -119,8 +119,8 @@
 			e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
 		})
 		.on('search_collapsed', function(e) {
-			overlays.eachLayer(function(layer) { 
-				overlays.resetStyle(layer);
+			archivo.eachLayer(function(layer) { 
+				archivo.resetStyle(layer);
 			});	
 		});
 		
