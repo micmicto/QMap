@@ -115,7 +115,7 @@
     		imageBounds = [[7.9409, -131.1589], [29.2144, -82.6558]];
 		L.imageOverlay(catedralNueva, imageBounds).addTo(map);
 		
-		L.control.sideBySide(catedralVieja, catedralNueva).addTo(map);
+		
 		
 		var hash = new L.Hash(map);
 		
@@ -133,7 +133,7 @@
 		]);
 		archivo.addTo(map)
 		//biblioteca.addTo(map)
-		
+		L.control.sideBySide(catedralVieja, catedralNueva).addTo(map);
 		L.control.layers(baseLayers, overlays).addTo(map);
 		
 	</script>
