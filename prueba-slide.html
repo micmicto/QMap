@@ -96,16 +96,15 @@
 		L.marker([0,10], {icon: archivoIcon}).bindPopup('<center><strong>Archivo Histórico de la Provincia de México de la Compañía de Jesús</strong></center><br> <br><br>Av. Horacio 1330, Col. Los Morales, México, D.F.').addTo(archivo);
 		L.marker([0,7], {icon: archivoIcon}).bindPopup('<center><strong>Archivo Histórico de la Facultad de Ingeniería</strong></center><br> <br><br>Circuito Interior s/n, Ciudad Universitaria, México D. F. ').addTo(archivo);
 		L.marker([1,6], {icon: bibliotecaIcon}).bindPopup('<center><strong>Consejo de la Cultura de la Arquidiócesis de Morelia</strong></center><br> <br><br>Apartado Postal 17, colonia Morelia, Michoacán').addTo(biblioteca);
-		
-	    	//var grayscale   =  L.tileLayer('https://api.mapbox.com/styles/v1/micmict/cj4djhax81itr2smjwcxchuzv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWljbWljdCIsImEiOiJjaWg5cW5ibTUwc2wydWVrdGNqMHRvZG9vIn0.ECk38Nb7lkweJec9sRbjtA',
-		//{	attribution: '<a href= "http://www.edicionesquivira.com/">Ediciones Quivira</a>'
-		//});
 	
 		var map = L.map('map', {
 			center: [23.140, -101.887],
 			zoom: 5,
 			layers: [archivo, biblioteca]
 		});
+		
+		map.createPane('left');
+		map.createPane('right');
 		
 		var catedralVieja = 'https://cdn-5befa143f911c80db489a19d.closte.com/wp-content/uploads/2019/02/cincuentas.jpg',
     		imageBounds = [[7.9409, -131.1589], [29.2144, -82.6558]];
