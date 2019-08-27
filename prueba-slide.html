@@ -96,10 +96,10 @@
 		L.marker([0,7], {icon: archivoIcon}).bindPopup('<center><strong>Archivo Histórico de la Facultad de Ingeniería</strong></center><br> <br><br>Circuito Interior s/n, Ciudad Universitaria, México D. F. ').addTo(archivo);
 		L.marker([1,6], {icon: bibliotecaIcon}).bindPopup('<center><strong>Consejo de la Cultura de la Arquidiócesis de Morelia</strong></center><br> <br><br>Apartado Postal 17, colonia Morelia, Michoacán').addTo(biblioteca);
 	
-	    	var grayscale   =  L.tileLayer('https://api.mapbox.com/styles/v1/micmict/cj4djhax81itr2smjwcxchuzv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWljbWljdCIsImEiOiJjaWg5cW5ibTUwc2wydWVrdGNqMHRvZG9vIn0.ECk38Nb7lkweJec9sRbjtA',
+	    var grayscale   =  L.tileLayer('https://api.mapbox.com/styles/v1/micmict/cj4djhax81itr2smjwcxchuzv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWljbWljdCIsImEiOiJjaWg5cW5ibTUwc2wydWVrdGNqMHRvZG9vIn0.ECk38Nb7lkweJec9sRbjtA',
 		{	attribution: '<a href= "http://www.edicionesquivira.com/">Ediciones Quivira</a>'
 		});
-		
+	
 		var map = L.map('map', {
 			center: [23.140, -101.887],
 			zoom: 5,
