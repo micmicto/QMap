@@ -96,14 +96,22 @@
 		L.marker([0,7], {icon: archivoIcon}).bindPopup('<center><strong>Archivo Histórico de la Facultad de Ingeniería</strong></center><br> <br><br>Circuito Interior s/n, Ciudad Universitaria, México D. F. ').addTo(archivo);
 		L.marker([1,6], {icon: bibliotecaIcon}).bindPopup('<center><strong>Consejo de la Cultura de la Arquidiócesis de Morelia</strong></center><br> <br><br>Apartado Postal 17, colonia Morelia, Michoacán').addTo(biblioteca);
 	
-	    var grayscale   =  L.tileLayer('https://api.mapbox.com/styles/v1/micmict/cj4djhax81itr2smjwcxchuzv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWljbWljdCIsImEiOiJjaWg5cW5ibTUwc2wydWVrdGNqMHRvZG9vIn0.ECk38Nb7lkweJec9sRbjtA',
-		{	attribution: '<a href= "http://www.edicionesquivira.com/">Ediciones Quivira</a>'
-		});
-	
+	    	//var grayscale   =  L.tileLayer('https://api.mapbox.com/styles/v1/micmict/cj4djhax81itr2smjwcxchuzv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWljbWljdCIsImEiOiJjaWg5cW5ibTUwc2wydWVrdGNqMHRvZG9vIn0.ECk38Nb7lkweJec9sRbjtA',
+		//{	attribution: '<a href= "http://www.edicionesquivira.com/">Ediciones Quivira</a>'
+		//});
+		
+		var catedralVieja = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+    		imageBounds = [[7.9409, -131.1589], [29.2144, -82.6558]];
+		L.imageOverlay(catedralVieja, imageBounds).addTo(map);
+		
+		var catedralNueva = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+    		imageBounds = [[7.9409, -131.1589], [29.2144, -82.6558]];
+		L.imageOverlay(catedralNueva, imageBounds).addTo(map);
+		
 		var map = L.map('map', {
 			center: [23.140, -101.887],
 			zoom: 5,
-			layers: [grayscale, archivo, biblioteca]
+			layers: [archivo, biblioteca]
 		});
 		
 		var hash = new L.Hash(map);
@@ -114,23 +122,6 @@
 			"Archivos": archivo
 			//"Bibliotecas": biblioteca
 		};
-		
-		var searchControl = new L.Control.Search({
-			layer: archivo, 
-			propertyName: 'name',
-			circleLocation: false
-		});
- 
-		searchControl.on('search_locationfound', function(e) {
-			e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
-		})
-		.on('search_collapsed', function(e) {
-			archivo.eachLayer(function(layer) { //restauramos el color del elemento
-				archivo.resetStyle(layer);
-			});	
-		});
-		
-		map.addControl(searchControl);
 		
 		var mcg = L.markerClusterGroup.layerSupport().addTo(map);
 		mcg.checkIn([
