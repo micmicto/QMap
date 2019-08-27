@@ -107,6 +107,9 @@
 			layers: [archivo, biblioteca]
 		});
 		
+		map.createPane('left');
+		map.createPane('right');
+		
 		var catedralVieja = 'https://cdn-5befa143f911c80db489a19d.closte.com/wp-content/uploads/2019/02/cincuentas.jpg',
     		imageBounds = [[7.9409, -131.1589], [29.2144, -82.6558]];
 		L.imageOverlay(catedralVieja, imageBounds, {pane:"left"}).addTo(map);
