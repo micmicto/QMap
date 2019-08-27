@@ -69,20 +69,8 @@
 		L.icon =function (options) {
 			return new L.Icon(options);
 		};
-		
-		
-		
+				
 		var archivo = new L.LayerGroup();
-		$.getJSON("resources/archivosbibliotecas.geojson",function(data){
-			L.geoJson(data,{
-			  pointToLayer: function(feature,latlng){
-				var marker = L.marker(latlng,{icon: archivoIcon});
-				marker.bindPopup(feature.properties.nombre);
-				return marker;
-			  }
-			}).addTo(archivo);
-		  });
-		
 		
 		var biblioteca = new L.LayerGroup();
 		
