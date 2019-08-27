@@ -51,6 +51,20 @@
 	<link rel="stylesheet" href="css/leaflet-search.css">
 	<script>		
 	
+		var QuivIcons =L.Icon.extend({
+			options:{
+				iconSize:		[30,30],
+				popupAnchor:	[-20,-40]
+			}
+		});
+	
+		
+		var archivoIcon = new QuivIcons({iconUrl: 'icons/booksa.png'}),
+			bibliotecaIcon = new QuivIcons ({iconUrl: 'icons/books.png'});
+	
+		L.icon =function (options) {
+			return new L.Icon(options);
+		};
 		
 		var archivo = new L.LayerGroup();
 		$.getJSON("resources/archivosbibliotecas.geojson",function(data){
