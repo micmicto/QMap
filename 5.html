@@ -115,14 +115,6 @@
 			//"Bibliotecas": biblioteca
 		};
 		
-			
-		var mcg = L.markerClusterGroup.layerSupport().addTo(map);
-		mcg.checkIn([
-			archivo,
-			biblioteca
-		]);
-		archivo.addTo(map)
-		//biblioteca.addTo(map)
 		
 		L.control.layers(baseLayers, overlays).addTo(map);
 		
