@@ -47,9 +47,9 @@
 
 	<script>		
 
-	   	//var grayscale   =  L.tileLayer('https://api.mapbox.com/styles/v1/micmict/cj4djhax81itr2smjwcxchuzv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWljbWljdCIsImEiOiJjaWg5cW5ibTUwc2wydWVrdGNqMHRvZG9vIn0.ECk38Nb7lkweJec9sRbjtA',
-		//{	attribution: '<a href= "http://www.edicionesquivira.com/">Ediciones Quivira</a>'
-		//});
+	   	var grayscale   =  L.tileLayer('https://api.mapbox.com/styles/v1/micmict/cj4djhax81itr2smjwcxchuzv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWljbWljdCIsImEiOiJjaWg5cW5ibTUwc2wydWVrdGNqMHRvZG9vIn0.ECk38Nb7lkweJec9sRbjtA',
+		{	attribution: '<a href= "http://www.edicionesquivira.com/">Ediciones Quivira</a>'
+		});
 		
 		var catedralVieja = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
     		imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
@@ -58,7 +58,7 @@
 		var map = L.map('map', {
 			center: [23.140, -101.887],
 			zoom: 5,
-			layers: [catedralVieja]
+			layers: [grayscale]
 		});
 		
 		var hash = new L.Hash(map);
