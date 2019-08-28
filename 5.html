@@ -55,47 +55,7 @@
 
 
 	<script>		
-		var QuivIcons =L.Icon.extend({
-			options:{
-				iconSize:		[30,30],
-				popupAnchor:	[-20,-40]
-			}
-		});
-	
-		
-		var archivoIcon = new QuivIcons({iconUrl: 'icons/booksa.png'}),
-			bibliotecaIcon = new QuivIcons ({iconUrl: 'icons/books.png'});
-	
-		L.icon =function (options) {
-			return new L.Icon(options);
-		};
-		
-		
-		
-		var archivo = new L.LayerGroup();
-		$.getJSON("resources/archivosbibliotecas.geojson",function(data){
-			L.geoJson(data,{
-			  pointToLayer: function(feature,latlng){
-				var marker = L.marker(latlng,{icon: archivoIcon});
-				marker.bindPopup(feature.properties.nombre);
-				return marker;
-			  }
-			}).addTo(archivo);
-		  });
-		
-		
-		var biblioteca = new L.LayerGroup();
-		
-		L.marker([19.417452, -99.173452], {icon: bibliotecaIcon}).bindPopup('<center><strong>Centro de Documentación e Investigación Ashkenazí de México</strong></center><br>El Centro cuenta un archivo fotográfico. La página no presenta algún catálogo en línea.   <br><br>Acapulco 70, 2o piso, Colonia Roma, México, D. F.').addTo(biblioteca);
-		L.marker([19.346917, -99.183852], {icon: bibliotecaIcon}).bindPopup('<center><strong>Centro de Estudios de Historia de México, CONDUMEX</strong></center><br>La bibloteca está formada por más de 66,000 volúmenes especializados en historia de México. Consta de una colección virreinal, libros e impresos mexicanos del siglo XVI, crónicas religiosas y civiles, legislación, alegatos jurídicos, sermones, novenas, indulgencias, biografías, etcétera. Así como libros decimonónicos a partir de 1821 hasta el siglo XX. <br><br>Plaza Federico Gamboa 1-A, Chimalistac, Ciudad de México.  ').addTo(biblioteca);
-		L.marker([19.333331, -99.183082], {icon: bibliotecaIcon}).bindPopup('<center><strong>Centro de Información y Documentación Mtro. Jesús Silva-Herzog del Instituto de Investigaciones Económicas, UNAM</strong></center><br> <br><br>Torre II de Humanidades, piso 1, Ciudad Universitaria, Mexico, D. F. ').addTo(biblioteca);
-		L.marker([20.679267, -103.346847], {icon: bibliotecaIcon}).bindPopup('<center><strong>Arquidiócesis de Guadalajara</strong></center><br> <br><br>Calle Liceo 170, Zona Centro, Guadalajara, Jalisco').addTo(biblioteca);
-		L.marker([19.054236, -98.283191], {icon: bibliotecaIcon}).bindPopup('<center><strong>Sala de colecciones especiales de la Biblioteca central, Universidad de las Américas</strong></center><brEl acervo de la biblioteca comprende diferentes colecciones que fueron adquiridas, algunas de ellas, por donaciones y fueron impresas entre el siglo XVI y XIX. <br><br>Sala de Colecciones Especiales de la Biblioteca Central, Universidad de las Américas. Ex-Hacienda santa Catarina Mártir, San Andrés, Cholula, Puebla.').addTo(biblioteca);
-		
-		L.marker([0,10], {icon: archivoIcon}).bindPopup('<center><strong>Archivo Histórico de la Provincia de México de la Compañía de Jesús</strong></center><br> <br><br>Av. Horacio 1330, Col. Los Morales, México, D.F.').addTo(archivo);
-		L.marker([0,7], {icon: archivoIcon}).bindPopup('<center><strong>Archivo Histórico de la Facultad de Ingeniería</strong></center><br> <br><br>Circuito Interior s/n, Ciudad Universitaria, México D. F. ').addTo(archivo);
-		L.marker([1,6], {icon: bibliotecaIcon}).bindPopup('<center><strong>Consejo de la Cultura de la Arquidiócesis de Morelia</strong></center><br> <br><br>Apartado Postal 17, colonia Morelia, Michoacán').addTo(biblioteca);
-	
+
 	    var grayscale   =  L.tileLayer('https://api.mapbox.com/styles/v1/micmict/cj4djhax81itr2smjwcxchuzv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWljbWljdCIsImEiOiJjaWg5cW5ibTUwc2wydWVrdGNqMHRvZG9vIn0.ECk38Nb7lkweJec9sRbjtA',
 		{	attribution: '<a href= "http://www.edicionesquivira.com/">Ediciones Quivira</a>'
 		});
