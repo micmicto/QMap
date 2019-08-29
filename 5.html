@@ -53,17 +53,20 @@
 			zoom: 5
 		});
 		
-		var catedralVieja = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
-    		imageBounds = [[7.9409, -131.1589], [29.2144, -82.6558]];
-		L.imageOverlay(catedralVieja, imageBounds).addTo(map);
+		map.createPane('left');
+		map.createPane('right');
 		
+		var catedralVieja = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+		imageBounds = [[7.9409, -131.1589], [29.2144, -82.6558]];
+		var leftLayer = L.imageOverlay(catedralVieja, imageBounds, {pane: 'left'}).addTo(map);
+
 		var catedralNueva = 'https://img.vixdata.io/pd/jpg-large/es/sites/default/files/a/atlantis-ciudad-perdida.jpg',
-    		imageBounds = [[7.9409, -131.1589], [29.2144, -82.6558]];
-		L.imageOverlay(catedralNueva, imageBounds).addTo(map);
+		imageBounds = [[7.9409, -131.1589], [29.2144, -82.6558]];
+		var rightLayer = L.imageOverlay(catedralNueva, imageBounds, {pane: 'right'}).addTo(map);
 		
 		var hash = new L.Hash(map);
 		
-		L.control.sideBySide(catedralVieja, catedralNueva).addTo(map);
+		L.control.sideBySide(leftLayer, rightLayer).addTo(map);
 		
 	</script>
 </body>
