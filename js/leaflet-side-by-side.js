@@ -95,10 +95,10 @@ L.Control.SideBySide = L.Control.extend({
       return this
     }
     if (this._leftLayer) {
-      this._leftLayer.getContainer().style.clip = ''
+      this._leftLayer.getPane().style.clip = ''
     }
     if (this._rightLayer) {
-      this._rightLayer.getContainer().style.clip = ''
+      this._rightLayer.getPane().style.clip = ''
     }
     this._removeEvents()
     L.DomUtil.remove(this._container)
